@@ -5,6 +5,7 @@ import type { Cafe, CategoryId } from '~/types/cafe'
 export function useCafes() {
   const selectedCategories = ref<CategoryId[]>([])
   const selectedNeighborhoods = ref<string[]>([])
+  const searchQuery = ref('')
 
   const neighborhoods = computed(() => {
     const unique = [...new Set(cafes.map((c) => c.neighborhood))]
@@ -12,14 +13,21 @@ export function useCafes() {
   })
 
   const filteredCafes = computed<Cafe[]>(() => {
+    const query = searchQuery.value.toLowerCase().trim()
     return cafes.filter((cafe) => {
+      const matchesSearch =
+        query === '' ||
+        cafe.name.toLowerCase().includes(query) ||
+        cafe.address.toLowerCase().includes(query) ||
+        cafe.neighborhood.toLowerCase().includes(query) ||
+        cafe.description?.toLowerCase().includes(query)
       const matchesCategory =
         selectedCategories.value.length === 0 ||
         selectedCategories.value.some((cat) => cafe.categories.includes(cat))
       const matchesNeighborhood =
         selectedNeighborhoods.value.length === 0 ||
         selectedNeighborhoods.value.includes(cafe.neighborhood)
-      return matchesCategory && matchesNeighborhood
+      return matchesSearch && matchesCategory && matchesNeighborhood
     })
   })
 
@@ -49,6 +57,7 @@ export function useCafes() {
     cafes,
     categories,
     neighborhoods,
+    searchQuery,
     selectedCategories,
     selectedNeighborhoods,
     filteredCafes,
