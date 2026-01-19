@@ -8,8 +8,6 @@ defineProps<{
 const emit = defineEmits<{
   select: [cafe: Cafe]
 }>()
-
-const { getCategoryName } = useCafes()
 </script>
 
 <template>
@@ -27,11 +25,11 @@ const { getCategoryName } = useCafes()
 
     <div class="flex flex-wrap gap-1 mt-3">
       <span
-        v-for="cat in cafe.categories"
-        :key="cat"
+        v-for="category in cafe.categories"
+        :key="category"
         class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full"
       >
-        {{ getCategoryName(cat) }}
+        {{ $t(`categories.${category}`) }}
       </span>
     </div>
 
@@ -44,7 +42,7 @@ const { getCategoryName } = useCafes()
         class="text-amber-600 hover:underline"
         @click.stop
       >
-        Site web
+        {{ $t('cafes.website') }}
       </a>
       <a
         v-if="cafe.instagram"
@@ -52,8 +50,9 @@ const { getCategoryName } = useCafes()
         target="_blank"
         rel="noopener"
         class="text-amber-600 hover:underline"
+        @click.stop
       >
-        Instagram
+        {{ $t('cafes.instagram') }}
       </a>
     </div>
   </article>

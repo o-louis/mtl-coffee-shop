@@ -1,0 +1,35 @@
+{
+  "site": {
+    "title": "Montreal Cafés",
+    "description": "Discover the best cafés in the city by category"
+  },
+  "search": {
+    "placeholder": "Search for a café, address, neighborhood..."
+  },
+  "filters": {
+    "category": "Filter by category",
+    "neighborhood": "Filter by neighborhood",
+    "showMore": "+{count} neighborhoods",
+    "showLess": "Show less",
+    "selected": "{count} neighborhood selected | {count} neighborhoods selected"
+  },
+  "categories": {
+    "work": "Workspace",
+    "takeaway": "Takeaway coffee",
+    "reading": "Reading space",
+    "social": "Meet friends",
+    "specialty": "Specialty coffee"
+  },
+  "cafes": {
+    "count": "{count} café | {count} cafés",
+    "website": "Website",
+    "instagram": "Instagram"
+  },
+  "map": {
+    "title": "Map",
+    "loading": "Loading map..."
+  },
+  "language": {
+    "switch": "Français"
+  }
+}

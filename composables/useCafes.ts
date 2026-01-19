@@ -40,10 +40,6 @@ export function useCafes() {
     }
   }
 
-  function getCategoryName(categoryId: CategoryId): string {
-    return categories.find((c) => c.id === categoryId)?.name ?? categoryId
-  }
-
   function toggleNeighborhood(neighborhood: string) {
     const index = selectedNeighborhoods.value.indexOf(neighborhood)
     if (index === -1) {
@@ -63,6 +59,5 @@ export function useCafes() {
     filteredCafes,
     toggleCategory,
     toggleNeighborhood,
-    getCategoryName,
   }
 }

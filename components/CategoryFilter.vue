@@ -24,7 +24,7 @@ const emit = defineEmits<{
       "
       @click="emit('toggle', category.id)"
     >
-      {{ category.icon }} {{ category.name }}
+      {{ category.icon }} {{ $t(`categories.${category.id}`) }}
     </button>
   </div>
 </template>

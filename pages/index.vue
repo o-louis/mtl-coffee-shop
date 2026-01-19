@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Cafe } from '~/types/cafe'
 
+const { t } = useI18n()
+
 const {
   categories,
   neighborhoods,
@@ -17,16 +19,23 @@ const selectedCafe = ref<Cafe | null>(null)
 function selectCafe(cafe: Cafe) {
   selectedCafe.value = cafe
 }
+
+useHead({
+  title: () => t('site.title'),
+})
 </script>
 
 <template>
   <div class="min-h-screen bg-gray-50">
     <header class="bg-amber-700 text-white py-6 px-4">
-      <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl font-bold">☕ Cafés Montréal</h1>
-        <p class="mt-2 text-amber-100">
-          Découvrez les meilleurs cafés de la ville par catégorie
-        </p>
+      <div class="max-w-7xl mx-auto flex justify-between items-start">
+        <div>
+          <h1 class="text-3xl font-bold">☕ {{ $t('site.title') }}</h1>
+          <p class="mt-2 text-amber-100">
+            {{ $t('site.description') }}
+          </p>
+        </div>
+        <LanguageSwitcher />
       </div>
     </header>
 
@@ -36,7 +45,7 @@ function selectCafe(cafe: Cafe) {
           <input
             v-model="searchQuery"
             type="text"
-            placeholder="Rechercher un café, une adresse, un quartier..."
+            :placeholder="$t('search.placeholder')"
             class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none"
           />
           <svg
@@ -57,7 +66,7 @@ function selectCafe(cafe: Cafe) {
 
       <section class="mb-6">
         <h2 class="text-lg font-semibold text-gray-700 mb-3">
-          Filtrer par catégorie
+          {{ $t('filters.category') }}
         </h2>
         <CategoryFilter
           :categories="categories"
@@ -68,7 +77,7 @@ function selectCafe(cafe: Cafe) {
 
       <section class="mb-6">
         <h2 class="text-lg font-semibold text-gray-700 mb-3">
-          Filtrer par quartier
+          {{ $t('filters.neighborhood') }}
         </h2>
         <NeighborhoodFilter
           :neighborhoods="neighborhoods"
@@ -80,7 +89,7 @@ function selectCafe(cafe: Cafe) {
       <div class="grid lg:grid-cols-2 gap-6">
         <section>
           <h2 class="text-lg font-semibold text-gray-700 mb-3">
-            {{ filteredCafes.length }} café{{ filteredCafes.length > 1 ? 's' : '' }}
+            {{ $t('cafes.count', filteredCafes.length) }}
           </h2>
           <div class="space-y-4 max-h-[600px] overflow-y-auto pr-2">
             <CafeCard
@@ -93,7 +102,7 @@ function selectCafe(cafe: Cafe) {
         </section>
 
         <section class="h-[600px]">
-          <h2 class="text-lg font-semibold text-gray-700 mb-3">Carte</h2>
+          <h2 class="text-lg font-semibold text-gray-700 mb-3">{{ $t('map.title') }}</h2>
           <ClientOnly>
             <CafeMap
               :cafes="filteredCafes"
@@ -102,7 +111,7 @@ function selectCafe(cafe: Cafe) {
             />
             <template #fallback>
               <div class="h-full bg-gray-200 rounded-lg flex items-center justify-center">
-                Chargement de la carte...
+                {{ $t('map.loading') }}
               </div>
             </template>
           </ClientOnly>

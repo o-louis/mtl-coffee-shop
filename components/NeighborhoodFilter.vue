@@ -43,12 +43,12 @@ const hiddenCount = computed(() => {
         class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300 transition-colors"
         @click="isExpanded = !isExpanded"
       >
-        {{ isExpanded ? 'Voir moins ↑' : `+${hiddenCount} quartiers ↓` }}
+        {{ isExpanded ? $t('filters.showLess') + ' ↑' : $t('filters.showMore', { count: hiddenCount }) + ' ↓' }}
       </button>
     </div>
 
     <p v-if="selected.length > 0" class="mt-2 text-sm text-gray-500">
-      {{ selected.length }} quartier{{ selected.length > 1 ? 's' : '' }} sélectionné{{ selected.length > 1 ? 's' : '' }}
+      {{ $t('filters.selected', selected.length) }}
     </p>
   </div>
 </template>

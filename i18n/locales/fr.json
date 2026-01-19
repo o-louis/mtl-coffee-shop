@@ -1,0 +1,35 @@
+{
+  "site": {
+    "title": "Cafés Montréal",
+    "description": "Découvrez les meilleurs cafés de la ville par catégorie"
+  },
+  "search": {
+    "placeholder": "Rechercher un café, une adresse, un quartier..."
+  },
+  "filters": {
+    "category": "Filtrer par catégorie",
+    "neighborhood": "Filtrer par quartier",
+    "showMore": "+{count} quartiers",
+    "showLess": "Voir moins",
+    "selected": "{count} quartier sélectionné | {count} quartiers sélectionnés"
+  },
+  "categories": {
+    "work": "Espace pour travailler",
+    "takeaway": "Café à emporter",
+    "reading": "Espace pour lire",
+    "social": "Rencontrer des amis",
+    "specialty": "Café de spécialité"
+  },
+  "cafes": {
+    "count": "{count} café | {count} cafés",
+    "website": "Site web",
+    "instagram": "Instagram"
+  },
+  "map": {
+    "title": "Carte",
+    "loading": "Chargement de la carte..."
+  },
+  "language": {
+    "switch": "English"
+  }
+}
