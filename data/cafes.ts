@@ -1,0 +1,53 @@
+import type { Cafe } from '~/types/cafe'
+
+export const cafes: Cafe[] = [
+  {
+    id: 'cafe-olimpico',
+    name: 'Café Olimpico',
+    address: '124 Rue Saint-Viateur Ouest',
+    neighborhood: 'Mile End',
+    coordinates: { lat: 45.5237, lng: -73.6006 },
+    categories: ['social', 'takeaway'],
+    description: 'Institution du Mile End depuis 1970, ambiance italienne authentique.',
+    instagram: 'cafeolimpico',
+  },
+  {
+    id: 'crew-collective',
+    name: 'Crew Collective & Café',
+    address: '360 Rue Saint-Jacques',
+    neighborhood: 'Vieux-Montréal',
+    coordinates: { lat: 45.5025, lng: -73.5587 },
+    categories: ['work', 'specialty'],
+    description: 'Magnifique espace de travail dans une ancienne banque.',
+    website: 'https://crewcollectivecafe.com',
+  },
+  {
+    id: 'pikolo',
+    name: 'Pikolo Espresso Bar',
+    address: '3418A Avenue du Parc',
+    neighborhood: 'Mile End',
+    coordinates: { lat: 45.5117, lng: -73.5777 },
+    categories: ['specialty', 'takeaway', 'reading'],
+    description: 'Petit café cozy avec excellent espresso.',
+  },
+  {
+    id: 'dispatch',
+    name: 'Dispatch Coffee',
+    address: '5836 Boulevard Saint-Laurent',
+    neighborhood: 'Mile End',
+    coordinates: { lat: 45.5268, lng: -73.5978 },
+    categories: ['work', 'specialty'],
+    description: 'Torréfacteur local avec espace lumineux pour travailler.',
+    website: 'https://dispatchcoffee.ca',
+  },
+  {
+    id: 'saint-henri',
+    name: 'Saint-Henri micro-torréfacteur',
+    address: '3632 Rue Notre-Dame Ouest',
+    neighborhood: 'Saint-Henri',
+    coordinates: { lat: 45.4779, lng: -73.5852 },
+    categories: ['specialty', 'work', 'reading'],
+    description: 'Torréfacteur de qualité avec atmosphère décontractée.',
+    website: 'https://sainthenri.ca',
+  },
+]
