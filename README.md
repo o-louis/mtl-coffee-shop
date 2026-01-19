@@ -1,75 +1,18 @@
-# Nuxt Minimal Starter
+## Montreal Coffee Shop List ☕️
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Web application that lists coffee shops in Montreal.
 
-## Setup
+It allows users to explore cafés across the city and filter them by neighborhood and category (e.g. specialty coffee, cafés to work from, etc.). The goal is to make it easy to discover new coffee spots and find the right place depending on where you are and what you’re looking for.
 
-Make sure to install dependencies:
+### Tech Stack
+- Nuxt 3
+- Vue 3
+- Tailwind CSS
+- Leaflet (map)
+- Nuxt i18n
+
+### Setup
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
