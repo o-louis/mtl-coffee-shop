@@ -25,4 +25,5 @@ export interface Cafe {
   instagram?: string
   hours?: string
   imageUrl?: string
+  rating?: number // 1-5 scale
 }

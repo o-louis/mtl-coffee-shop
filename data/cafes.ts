@@ -11,6 +11,7 @@ export const cafes: Cafe[] = [
     categories: ['social', 'takeaway'],
     description: 'Institution du Mile End depuis 1970, ambiance italienne authentique.',
     instagram: 'cafeolimpico',
+    rating: 4.5,
   },
   {
     id: 'caffe-in-gamba',
@@ -21,6 +22,7 @@ export const cafes: Cafe[] = [
     categories: ['specialty', 'takeaway'],
     description: 'Espresso italien de qualité avec machine Faema E61 vintage.',
     website: 'https://caffeingamba.com',
+    rating: 4.8,
   },
   {
     id: 'cafe-alphabet',
@@ -119,6 +121,7 @@ export const cafes: Cafe[] = [
     categories: ['work', 'specialty'],
     description: 'Magnifique espace de travail dans une ancienne banque.',
     website: 'https://crewcollectivecafe.com',
+    rating: 4.6,
   },
   {
     id: 'tommy-cafe',
@@ -151,6 +154,7 @@ export const cafes: Cafe[] = [
     categories: ['specialty', 'work', 'reading'],
     description: 'Torréfacteur pionnier depuis 2011.',
     website: 'https://sainthenri.ca',
+    rating: 4.7,
   },
   {
     id: 'club-social-ps',
