@@ -33,15 +33,21 @@ watch(
       class="h-full w-full"
     >
       <LTileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
         layer-type="base"
-        name="OpenStreetMap"
+        name="CartoDB Positron"
       />
-      <LMarker
+      <LCircleMarker
         v-for="cafe in cafes"
         :key="cafe.id"
         :lat-lng="[cafe.coordinates.lat, cafe.coordinates.lng]"
+        :radius="5"
+        :fill="true"
+        fill-color="#ef4444"
+        :fill-opacity="1"
+        color="#dc2626"
+        :weight="2"
         @click="emit('select', cafe)"
       >
         <LPopup>
@@ -49,7 +55,7 @@ watch(
           <br />
           <span class="text-sm">{{ cafe.address }}</span>
         </LPopup>
-      </LMarker>
+      </LCircleMarker>
     </LMap>
   </div>
 </template>
