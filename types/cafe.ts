@@ -7,7 +7,6 @@ export type CategoryId =
 
 export interface Category {
   id: CategoryId
-  name: string
   icon: string
 }
 
