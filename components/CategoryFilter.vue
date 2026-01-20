@@ -16,11 +16,11 @@ const emit = defineEmits<{
     <button
       v-for="category in categories"
       :key="category.id"
-      class="px-4 py-2 rounded-full text-sm font-medium transition-colors"
+      class="px-4 py-2 rounded-full text-sm font-medium transition-all"
       :class="
         selected.includes(category.id)
-          ? 'bg-amber-600 text-white'
-          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          ? 'bg-gray-800 backdrop-blur-sm text-white border border-gray-700'
+          : 'bg-white/60 backdrop-blur-sm text-gray-700 border border-gray-200/50 hover:bg-white/80'
       "
       @click="emit('toggle', category.id)"
     >

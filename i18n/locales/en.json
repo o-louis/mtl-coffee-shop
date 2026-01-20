@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Montreal Cafés",
-    "description": "Discover the best cafés in the city by category"
+    "title": "Brew MTL",
+    "description": "Discover the best cafés in Montreal by category"
   },
   "search": {
     "placeholder": "Search for a café, address, neighborhood..."

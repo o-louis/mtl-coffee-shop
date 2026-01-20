@@ -12,10 +12,10 @@ const emit = defineEmits<{
 
 <template>
   <article
-    class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow cursor-pointer"
+    class="bg-white/70 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-4 hover:bg-white/90 hover:border-gray-300/50 hover:shadow-lg transition-all cursor-pointer"
     @click="emit('select', cafe)"
   >
-    <h3 class="font-bold text-lg text-gray-900">{{ cafe.name }}</h3>
+    <h3 class="font-bold text-lg text-blue-900">{{ cafe.name }}</h3>
     <p class="text-sm text-gray-500 mt-1">{{ cafe.neighborhood }}</p>
     <p class="text-sm text-gray-600 mt-1">{{ cafe.address }}</p>
 
@@ -27,7 +27,7 @@ const emit = defineEmits<{
       <span
         v-for="category in cafe.categories"
         :key="category"
-        class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full"
+        class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
       >
         {{ $t(`categories.${category}`) }}
       </span>
@@ -39,7 +39,7 @@ const emit = defineEmits<{
         :href="cafe.website"
         target="_blank"
         rel="noopener"
-        class="text-amber-600 hover:underline"
+        class="text-blue-700 hover:text-blue-900 hover:underline"
         @click.stop
       >
         {{ $t('cafes.website') }}
@@ -49,7 +49,7 @@ const emit = defineEmits<{
         :href="`https://instagram.com/${cafe.instagram}`"
         target="_blank"
         rel="noopener"
-        class="text-amber-600 hover:underline"
+        class="text-blue-700 hover:text-blue-900 hover:underline"
         @click.stop
       >
         {{ $t('cafes.instagram') }}

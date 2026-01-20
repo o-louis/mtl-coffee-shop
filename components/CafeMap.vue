@@ -25,7 +25,7 @@ watch(
 </script>
 
 <template>
-  <div class="h-full w-full rounded-lg overflow-hidden">
+  <div class="h-full w-full rounded-xl overflow-hidden border border-gray-200/50 shadow-lg">
     <LMap
       :zoom="zoom"
       :center="center"

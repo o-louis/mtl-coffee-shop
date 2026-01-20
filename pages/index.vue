@@ -26,12 +26,12 @@ useHead({
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <header class="bg-amber-700 text-white py-6 px-4">
+  <div class="min-h-screen bg-gradient-to-br from-gray-50 via-slate-50 to-gray-100">
+    <header class="bg-white/60 backdrop-blur-xl border-b border-gray-200/50 text-gray-900 py-6 px-4">
       <div class="max-w-7xl mx-auto flex justify-between items-start">
         <div>
-          <h1 class="text-3xl font-bold">☕ {{ $t('site.title') }}</h1>
-          <p class="mt-2 text-amber-100">
+          <h1 class="text-3xl font-bold">{{ $t('site.title') }}</h1>
+          <p class="mt-2 text-gray-600">
             {{ $t('site.description') }}
           </p>
         </div>
@@ -46,7 +46,7 @@ useHead({
             v-model="searchQuery"
             type="text"
             :placeholder="$t('search.placeholder')"
-            class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none"
+            class="w-full px-4 py-3 pl-10 rounded-xl bg-white/70 backdrop-blur-xl border border-gray-200/50 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-gray-400/50 focus:border-gray-400 outline-none"
           />
           <svg
             class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -64,8 +64,8 @@ useHead({
         </div>
       </section>
 
-      <section class="mb-6">
-        <h2 class="text-lg font-semibold text-gray-700 mb-3">
+      <section class="mb-6 bg-white/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-200/30">
+        <h2 class="text-lg font-semibold text-blue-900 mb-3">
           {{ $t('filters.category') }}
         </h2>
         <CategoryFilter
@@ -75,8 +75,8 @@ useHead({
         />
       </section>
 
-      <section class="mb-6">
-        <h2 class="text-lg font-semibold text-gray-700 mb-3">
+      <section class="mb-6 bg-white/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-200/30">
+        <h2 class="text-lg font-semibold text-blue-900 mb-3">
           {{ $t('filters.neighborhood') }}
         </h2>
         <NeighborhoodFilter
@@ -88,7 +88,7 @@ useHead({
 
       <div class="grid lg:grid-cols-2 gap-6">
         <section>
-          <h2 class="text-lg font-semibold text-gray-700 mb-3">
+          <h2 class="text-lg font-semibold text-blue-900 mb-3">
             {{ $t('cafes.count', filteredCafes.length) }}
           </h2>
           <div class="space-y-4 max-h-[600px] overflow-y-auto pr-2">
@@ -102,7 +102,7 @@ useHead({
         </section>
 
         <section class="h-[600px]">
-          <h2 class="text-lg font-semibold text-gray-700 mb-3">{{ $t('map.title') }}</h2>
+          <h2 class="text-lg font-semibold text-blue-900 mb-3">{{ $t('map.title') }}</h2>
           <ClientOnly>
             <CafeMap
               :cafes="filteredCafes"
@@ -110,7 +110,7 @@ useHead({
               @select="selectCafe"
             />
             <template #fallback>
-              <div class="h-full bg-gray-200 rounded-lg flex items-center justify-center">
+              <div class="h-full bg-white/70 backdrop-blur-xl rounded-xl border border-gray-200/50 flex items-center justify-center text-gray-500">
                 {{ $t('map.loading') }}
               </div>
             </template>
