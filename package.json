@@ -2,6 +2,7 @@
   "name": "mtl-coffee-list",
   "private": true,
   "type": "module",
+  "licence": "UNLICENSED", 
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
